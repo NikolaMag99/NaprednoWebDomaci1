@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConfigService} from "../../services/config.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'domaci1';
+
+  constructor(private configService: ConfigService) {
+  }
+
+  getUserName() {
+    return this.configService.getUserName();
+  }
 }
