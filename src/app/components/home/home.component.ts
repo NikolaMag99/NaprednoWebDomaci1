@@ -9,17 +9,17 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  date: Date;
-
-  primaryColor: string = 'blue';
-  boldTextEnabled: boolean = true;
-
-  constructor(private router: Router) {
-    this.date = new Date();
+  token: string;
+  constructor() {
+    this.token = "";
   }
 
   ngOnInit(): void {
+  }
 
+  submitToken(): void {
+    window.localStorage.setItem('token',this.token);
+    this.token='';
   }
 
 }

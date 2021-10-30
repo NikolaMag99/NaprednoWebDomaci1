@@ -1,0 +1,16 @@
+<div>
+  <h1>Text similarity</h1>
+
+  <div>
+    <form (submit)="checkTextSimilarity()" class="mb-5">
+      <div>
+        <textarea name="message" rows="4" cols="50" [(ngModel)]="textOne" class="main" ></textarea>
+        <textarea name="message" rows="4" cols="50" [(ngModel)]="textTwo" ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3 *ngIf="similarity.similarity != 0">
+      {{similarity.similarity*100}}%
+    </h3>
+  </div>
+</div>

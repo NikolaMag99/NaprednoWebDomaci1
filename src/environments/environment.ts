@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  token: "dcb75e54625c4c6ca4fb741ed939109e",
+  postApi: 'https://api.dandelion.eu',
+  textSimilarityUrl: 'https://api.dandelion.eu/datatxt/sim/v1/',
+  entityExtractionUrl: 'https://api.dandelion.eu/datatxt/nex/v1/',
+  langDetectionUrl: 'https://api.dandelion.eu/datatxt/li/v1/',
+  sentimentAnalysis: 'https://api.dandelion.eu/datatxt/sent/v1/',
+  token: 'dcb75e54625c4c6ca4fb741ed939109e'
 };
 
 /*

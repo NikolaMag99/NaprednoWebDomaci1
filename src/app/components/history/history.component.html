@@ -1,0 +1,5 @@
+<div *ngIf= "history.length != 0 ">
+  <div *ngFor="let h of history;" class="mb-2">
+    <p> {{ h.timestamp }},   {{ h.method }},  {{h.url}}</p>
+  </div>
+</div>
