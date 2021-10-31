@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Similarity} from "../../models";
-import {ApiService} from "../../services/api.service";
+import {DandelionService} from "../../services/dandelion.service";
 
 @Component({
   selector: 'app-text-similarity',
@@ -16,15 +16,16 @@ export class TextSimilarityComponent implements OnInit {
     timeStamp: '',
     time: 0,
     lang: '',
-    langconfidence: 0,
+    langConfidence: 0,
     text1: '',
     url1:'',
     text2: '',
     url2:'',
     similarity: 0
+
   }
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: DandelionService) { }
 
   ngOnInit(): void {
   }

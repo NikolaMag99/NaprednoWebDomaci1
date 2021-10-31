@@ -2,10 +2,23 @@ export interface EntityExtractions{
   annotations: Entity[]
 }
 
+export interface DetectedLanguages{
+  lang: string,
+  confidence: number
+}
+export interface LanguageDetection{
+  timestamp: string,
+  time: number,
+  text: string,
+  url: string,
+  detectedLangs: DetectedLanguages[]
+}
+
 export interface Image{
   thumbnail: string,
   full: string
 }
+
 
 export interface Entity{
   categories: string[],
@@ -23,7 +36,7 @@ export interface Similarity{
   timeStamp: string,
   time: number,
   lang: string,
-  langconfidence: number,
+  langConfidence: number,
   text1: string,
   url1:string,
   text2: string,

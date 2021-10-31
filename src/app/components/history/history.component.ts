@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../../services/api.service";
+import {DandelionService} from "../../services/dandelion.service";
 import {History} from "../../models";
 
 @Component({
@@ -11,7 +11,7 @@ export class HistoryComponent implements OnInit {
 
   history: History[] = []
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: DandelionService) { }
 
   ngOnInit(): void {
     this.history = this.apiService.getHistory()

@@ -7,11 +7,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TokenComponent implements OnInit {
 
-  token: string
-
+  token: any
 
   constructor() {
-    this.token = 'Token'
+    if (localStorage.getItem('token') == 'false' || localStorage.getItem('token') == null) {
+      this.token = ''
+    } else {
+      this.token = localStorage.getItem('token')
+    }
   }
 
   ngOnInit(): void {
@@ -30,5 +33,6 @@ export class TokenComponent implements OnInit {
     localStorage.setItem('token', value.value)
     this.token = value.value
   }
+
 
 }

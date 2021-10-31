@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {ConfigService} from "../../services/config.service";
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,7 @@ import {ConfigService} from "../../services/config.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor(private configService: ConfigService) {
+  constructor() {
   }
-
 
 }

@@ -1,3 +1,10 @@
 Token: {{token}} <br><br>
-Add Token: <input type="text" #AddTokenValue> <button (click)="setToken(AddTokenValue)"> Submit new token</button><br><br>
-Change Token: <input type="text" #ChangeTokenValue> <button (click)="changeToken(ChangeTokenValue)"> Change token</button><br><br>
+<!--<form (submit)="setToken(AddToken)" class="mb-5">-->
+<!--  <div>-->
+<!--    <input type="text" #AddToken  size="40" name="name" placeholder="token" [(ngModel)]="token">-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+<br><br>
+Set Token: <input type="text" #AddToken> <button (click)="setToken(AddToken)"> Set token</button><br><br>
+Change Token: <input type="text" #ChangeToken> <button (click)="changeToken(ChangeToken)"> Change token</button><br><br>

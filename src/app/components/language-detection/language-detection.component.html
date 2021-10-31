@@ -1,0 +1,23 @@
+<div>
+  <h1>Detect language page</h1>
+
+  <div>
+    <form (submit)="languageDetection()" class="mb-5">
+      <div>
+        <textarea [(ngModel)]="text" name="text" rows="4" cols="50"></textarea>
+        <br>
+        <label>Clean</label>
+        <input type="checkbox" placeholder="text" id="name" name="name" [(ngModel)]="clean">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br>
+      <div *ngFor="let lan of language.detectedLangs">
+        Language: {{lan.lang}}
+        <br>
+        Confidence: {{lan.confidence}}
+      </div>
+    </form>
+  </div>
+</div>
+

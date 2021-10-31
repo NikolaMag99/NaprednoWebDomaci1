@@ -9,6 +9,9 @@ import { TokenComponent } from './components/token/token.component';
 import { HistoryComponent } from './components/history/history.component';
 import { TextSimilarityComponent } from './components/text-similarity/text-similarity.component';
 import {HttpClientModule} from "@angular/common/http";
+import { LanguageDetectionComponent } from './components/language-detection/language-detection.component';
+import { SentimentAnalysisComponent } from './components/sentiment-analysis/sentiment-analysis.component';
+import { EntityExtractionComponent } from './components/entity-extraction/entity-extraction.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     TokenComponent,
     HistoryComponent,
-    TextSimilarityComponent
+    TextSimilarityComponent,
+    LanguageDetectionComponent,
+    SentimentAnalysisComponent,
+    EntityExtractionComponent
   ],
   imports: [
     BrowserModule,
