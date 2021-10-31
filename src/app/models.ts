@@ -2,6 +2,19 @@ export interface EntityExtractions{
   annotations: Entity[]
 }
 
+
+export interface Sentiment{
+  score: number,
+  type: string,
+}
+
+export interface SentimentAnalysis{
+  timestamp: string,
+  time: number,
+  lang: string,
+  sentiment: Sentiment
+}
+
 export interface DetectedLanguages{
   lang: string,
   confidence: number

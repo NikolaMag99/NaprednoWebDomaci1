@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {History, LanguageDetection, Similarity} from "../models";
+import {History, LanguageDetection, SentimentAnalysis, Similarity} from "../models";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -51,6 +51,12 @@ export class DandelionService {
       });
       return this.httpClient.get<LanguageDetection>(environment.langDetectionUrl + '?text=' + text + '&token=' + token)
     }
+  }
+
+  sentimentAnalysis(token: any, text: string, lang: string): Observable<SentimentAnalysis>{
+      this.history.push({timestamp: '[' + new Date().toISOString() + ']', method: 'GET', url: environment.sentimentAnalysis + '?lang=' + lang + '&text=' + text + '&token=' + token});
+      console.log(environment.sentimentAnalysis + '?lang=' + lang + '&text=' + text + '&token=' + token)
+      return this.httpClient.get<SentimentAnalysis>(environment.sentimentAnalysis  + '?lang=' + lang + '&text=' + text + '&token=' + token)
   }
 
 }
