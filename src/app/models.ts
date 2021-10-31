@@ -1,25 +1,26 @@
-export interface EntityExtractions{
+export interface EntityExtractions {
   annotations: Entity[]
 }
 
 
-export interface Sentiment{
+export interface Sentiment {
   score: number,
   type: string,
 }
 
-export interface SentimentAnalysis{
+export interface SentimentAnalysis {
   timestamp: string,
   time: number,
   lang: string,
   sentiment: Sentiment
 }
 
-export interface DetectedLanguages{
+export interface DetectedLanguages {
   lang: string,
   confidence: number
 }
-export interface LanguageDetection{
+
+export interface LanguageDetection {
   timestamp: string,
   time: number,
   text: string,
@@ -27,33 +28,33 @@ export interface LanguageDetection{
   detectedLangs: DetectedLanguages[]
 }
 
-export interface Image{
+export interface Image {
   thumbnail: string,
   full: string
 }
 
 
-export interface Entity{
+export interface Entity {
   categories: string[],
   abstract: string,
   image: Image
 }
 
-export interface History{
+export interface History {
   timestamp: any,
   method: string,
   url: string
 }
 
-export interface Similarity{
+export interface Similarity {
   timeStamp: string,
   time: number,
   lang: string,
   langConfidence: number,
   text1: string,
-  url1:string,
+  url1: string,
   text2: string,
-  url2:string,
+  url2: string,
   similarity: number
 }
 

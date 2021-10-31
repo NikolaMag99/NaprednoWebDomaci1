@@ -11,10 +11,12 @@ export class HistoryComponent implements OnInit {
 
   history: History[] = []
 
-  constructor(private apiService: DandelionService) { }
+  constructor(private dandelionService: DandelionService) {
+
+  }
 
   ngOnInit(): void {
-    this.history = this.apiService.getHistory()
+    this.history = this.dandelionService.getHistory()
     console.log(this.history.length)
   }
 

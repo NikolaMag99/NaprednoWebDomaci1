@@ -1,1 +1,36 @@
-<p>entity-extraction works!</p>
+<div>
+  <h1>Extract Entities</h1>
+  <div>
+    <form (submit)="entityExtraction()" class="mb-5">
+      <div class="main-div">
+        <textarea name="message" rows="7" cols="80" [(ngModel)]="text"></textarea>
+        <br>
+        <label>Image </label>
+        <input type="checkbox" placeholder="text" name="image" [(ngModel)]="include1">
+        <br>
+        <label>Abstract </label>
+        <input type="checkbox" placeholder="text" name="abstract" [(ngModel)]="include2">
+        <br>
+        <label>Categories </label>
+        <input type="checkbox" placeholder="text" name="categories" [(ngModel)]="include3">
+        <br>
+        <label>Confidence level between 0 and 1:   </label>
+        <input type="number" [(ngModel)]="confidence"><br>
+        <br>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <div>
+      <div *ngFor="let entity of extraction.annotations;" class="mb-2">
+        <label *ngIf="entity.image">Image: </label><br>  <img *ngIf="entity.image" src="{{entity.image.thumbnail}}"><br>
+        <label *ngIf="entity.abstract">Abstract: </label>  <p>{{entity.abstract}}</p><br>
+        <label *ngIf="entity.categories">Categories: </label>
+        <div *ngFor="let cat of entity.categories;" class="mb-2">
+          <p>{{cat}}</p>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

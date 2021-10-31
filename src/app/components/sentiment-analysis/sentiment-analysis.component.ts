@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SentimentAnalysis} from "../../models";
 import {DandelionService} from "../../services/dandelion.service";
 
@@ -11,10 +11,10 @@ export class SentimentAnalysisComponent implements OnInit {
 
   text: string = ''
   lang: string = ''
-  green:number;
-  red:number;
-  score:number;
-  type:string="";
+  green: number;
+  red: number;
+  score: number;
+  type: string = "";
 
   sentimentAnalysis: SentimentAnalysis = {
     timestamp: '',
@@ -27,34 +27,34 @@ export class SentimentAnalysisComponent implements OnInit {
   }
 
   constructor(private dandelionService: DandelionService) {
-    this.text='';
-    this.lang='auto'
-    this.green=255;
-    this.score=-1.1;
-    this.red=255;
+    this.text = '';
+    this.lang = 'auto'
+    this.green = 255;
+    this.score = -1.1;
+    this.red = 255;
   }
 
   ngOnInit(): void {
   }
 
   senAnalysis() {
-    this.dandelionService.sentimentAnalysis(localStorage.getItem('token'), this.text,this.lang).subscribe((analysis) => {
+    this.dandelionService.sentimentAnalysis(localStorage.getItem('token'), this.text, this.lang).subscribe((analysis) => {
       this.sentimentAnalysis = analysis
-      const normalizedScore=this.normalizeRange(this.sentimentAnalysis.sentiment.score);
-      this.red=255*(1-normalizedScore);
-      this.green=255*normalizedScore;
-      this.type=this.sentimentAnalysis.sentiment.type;
-      this.score=this.sentimentAnalysis.sentiment.score;
+      const newScore = this.range(this.sentimentAnalysis.sentiment.score);
+      this.red = 255 * (1 - newScore);
+      this.green = 255 * newScore;
+      this.type = this.sentimentAnalysis.sentiment.type;
+      this.score = this.sentimentAnalysis.sentiment.score;
     });
   }
 
 
-  getColorString() {
-    const color:string=`rgb(${this.red},${this.green},0)`;
+  getColor() {
+    const color: string = `rgb(${this.red},${this.green},0)`;
     return color;
   }
 
-  private normalizeRange(x:any):number{
+  private range(x: any): number {
     return (x + 1) / 2;
   }
 

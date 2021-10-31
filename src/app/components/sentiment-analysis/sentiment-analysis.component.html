@@ -4,7 +4,7 @@
   <div>
     <form (submit)="senAnalysis()" class="mb-5">
       <div>
-        <textarea name="message" rows="4" cols="50" [(ngModel)]="text" ></textarea>
+        <textarea name="message" rows="6" cols="70" [(ngModel)]="text"></textarea>
         <br>
         <label>Options</label>
         <select name="lang" id="lang" [(ngModel)]="lang">
@@ -16,9 +16,9 @@
       <br>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <div *ngIf="type.length!==0">
+    <div *ngIf="type.length !== 0">
       <h3>{{score}}</h3>
-      <h3 [style.color]="getColorString()">{{type}}</h3>
+      <h3 [style.color]="getColor()">{{type}}</h3>
     </div>
   </div>
 </div>
