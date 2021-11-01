@@ -64,11 +64,11 @@ export class DandelionService {
   }
 
   entityExtraction(token: any, text: string, confidence: number, include: string[]): Observable<EntityExtractions> {
-    let build: string = ''
+    let str: string = ''
     for (const word of include) {
-      build += word + ','
+      str += word + ','
     }
-    let arr = build.substring(0, build.length - 1)
+    let arr = str.substring(0, str.length - 1)
     this.history.push({
       timestamp: '[' + new Date().toISOString() + ']',
       method: 'GET',
